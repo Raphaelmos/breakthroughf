@@ -4,4 +4,9 @@
 
 2. Implement IDS
 
-3. Have a forced capture aka force eat 
+3. Have a forced capture aka force eat
+
+
+# More details ? 
+
+Check the README.txt for way more informations but will need to traduce more for it 
