@@ -8,6 +8,9 @@
 #include <list>
 #include <cstddef>
 
+
+/* Use values already given in mybt.h and not overcomplicate it for nothing, no need to recreate new variables*/
+
 typedef int score_t;
 bool isTerminalState(bt_t board);
 score_t heuristicEvaluation(bt_t board);  
@@ -72,7 +75,6 @@ score -= ProximityToWin(board, BLACK) * 100;
 
 // Mobility
 score += MobilityScore(board);
-
 return score;
 
 }
