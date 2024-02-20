@@ -2,9 +2,12 @@
 /// TP recherche IDS ///
 ////////////////////////
 
+Currently working on q1 and chose to work on Forced Capture
+
 q1- Définir :
 + une fonction heuristique pour la variante classique 
 + une recherche IDS en temps limité (présentée au cours1) dans un fichier ids_player.cpp
+
 
 q2a- Ajouter la variante misère (dans mybt.h et dans run_many_games.pike)
 q2b- Ajouter la variante à captures forcées (dans mybt.h et dans run_many_games.pike)
