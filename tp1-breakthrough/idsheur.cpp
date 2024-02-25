@@ -351,15 +351,15 @@ void genmove() {
     return;
   }
 
-  bt_move_t best_move = heuristic_search(B);
-  B.play(best_move);
+//  bt_move_t best_move = heuristic_search(B);
+ /* B.play(best_move);
  if(verbose) {
     best_move.print(stderr, white_turn, B.nbl);
     fprintf(stderr, "\n"); 
   }
   white_turn = !white_turn;
-  printf("=%s\n\n", best_move.tostr(B.nbl).c_str());
-  /*
+  printf("=%s\n\n", best_move.tostr(B.nbl).c_str()); */
+  
   bt_move_t m = B.get_rand_move();
   B.play(m);
   if(verbose) {
@@ -367,7 +367,7 @@ void genmove() {
     fprintf(stderr, "\n");
   }
   white_turn = !white_turn;
-  printf("= %s\n\n", m.tostr(B.nbl).c_str()); */
+  printf("= %s\n\n", m.tostr(B.nbl).c_str()); 
 }
 void play(char a, char b, char c, char d) {
   bt_move_t m;
