@@ -10,7 +10,7 @@
 
 
 /* Use values already given in mybt.h and not overcomplicate it for nothing, no need to recreate new variables*/
-
+// Remove the bestmove type it gives problems everywhere along the way
 typedef int score_t;
 bool isTerminalState(bt_t board);
 score_t heuristicEvaluation(bt_t board);  
