@@ -46,3 +46,56 @@ Pour le moment, on posera pour contrainte de répondre le coup à jouer en 0.1 s
 Au delà de 0.1 sec, l'absence de réponse sera considérée comme un abandon
 
 /////////////////////////
+
+
+ENGLISH : 
+
+
+
+////////////////////////
+/// TP search IDS ///
+////////////////////////
+
+Currently working on q1 and chose to work on Forced Capture
+
+q1- Define:
++ a heuristic function for the classic variant 
++ a limited-time IDS search (presented in course1) in an ids_player.cpp file
+
+
+
+q2b- Add forced capture variant (in mybt.h and run_many_games.pike)
+
+
+
+(mandatory question q1)
+(questions q2a to q3 fixed semi-randomly)
+
+scale:
+q1 = 2 pts
+q2a = 2 pts
+q2b = 2 pts
+q2c = 3 pts
+q2d = 4 pts
+q2e = 4 pts
+
+Present your solution in 3 weeks.
+
+////////////////////////
+
+Files provided for this TP:
+* mybt. h defines the structures bt_piece_t, bt_move_t and bt_t
+* bt_piece_t that models a piece
+* bt_move_t that models a move
+* bt_t which models the platform and its constraints
+* rand_player.cpp is a random player that supports the breakthrough text protocol btp
+* the btp protocol allows to control a program to play a breakthrough
+* game1.txt is an example of a btp command file
+* run_many_games.pike is a pike program to play together programs supporting the building
+* Makefile allows to compile the rand_player
+* mk_stats.sh allows to launch multiple games, store logs and stats
+
+For the moment, we will be forced to answer the blow to play in 0.1 sec
+Beyond 0.1 sec, the lack of response will be considered an abandonment
+
+/////////////////////////
