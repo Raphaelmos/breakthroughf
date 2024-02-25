@@ -2,6 +2,7 @@
 /// TP recherche IDS ///
 ////////////////////////
 
+--> ( ENGLISH VERSION BELOW ) <--
 Currently working on q1 and chose to work on Forced Capture
 
 q1- Définir :
