@@ -9,4 +9,4 @@
 
 # More details ? 
 
-Check the README.txt for way more informations but will need to traduce more for it 
+Check the README.txt for way more informations, scroll below you will see the english version, French one first then english one.
