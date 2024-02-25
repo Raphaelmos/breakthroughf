@@ -9,11 +9,9 @@ q1- Définir :
 + une recherche IDS en temps limité (présentée au cours1) dans un fichier ids_player.cpp
 
 
-q2a- Ajouter la variante misère (dans mybt.h et dans run_many_games.pike)
+
 q2b- Ajouter la variante à captures forcées (dans mybt.h et dans run_many_games.pike)
-q2c- Ajouter la variante à coups simultanés (dans mybt.h et dans run_many_games.pike)
-q2d- Ajouter la variante à information imparfaite (dans mybt.h et dans run_many_games.pike)
-q2e- Proposer une solution permettant de réaliser une compétition entre plusieurs programmes
+
 
 
 (question q1 obligatoire)
