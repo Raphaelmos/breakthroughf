@@ -15,6 +15,106 @@ void bt_t::setForceEating(bool enforce);
 void bt_t::setForceEating(bool enforce) {
   force_eating = enforce;
 }
+  bool forceEating = false;  
+  int dx = abs(_m.col_f - _m.col_i);
+  if(dx > 1) return false;
+
+    if(forceEating) {
+    
+      if(color_f == color_i) {
+          return false;  
+      }
+      
+  }
+
+
+void bt_t::play(bt_move_t _m) {
+
+  int color_i = board[_m.line_i][_m.col_i];
+  int color_f = board[_m.line_f][_m.col_f];
+
+  bool forceEating = false;  
+
+  if(forceEating) {
+
+      if(color_f == color_i) {
+
+        int tmp = board[_m.line_i][_m.col_i];
+        board[_m.line_i][_m.col_i] = board[_m.line_f][_m.col_f];
+        board[_m.line_f][_m.col_f] = tmp;
+
+        if(color_i == WHITE){
+          for(int i = 0; i < nb_white_pieces; i++) {
+            if(white_pieces[i].line == _m.line_i && white_pieces[i].col == _m.col_i){
+              white_pieces[i].line = _m.line_f; 
+              white_pieces[i].col = _m.col_f;
+              break;
+            } 
+          }
+        }
+        else{
+          for(int i = 0; i < nb_black_pieces; i++) {
+            if(black_pieces[i].line == _m.line_i && black_pieces[i].col == _m.col_i){
+              black_pieces[i].line = _m.line_f;
+              black_pieces[i].col = _m.col_f;
+              break;
+            }
+          }
+        }
+
+        return;
+
+      }
+
+      if(color_i == WHITE) {
+        for(int i=0; i<nb_black_pieces; i++) {
+          if(black_pieces[i].line == _m.line_f && black_pieces[i].col == _m.col_f){
+            black_pieces[i] = black_pieces[nb_black_pieces-1];
+            nb_black_pieces--;
+            break;  
+          }
+        }
+      }
+      else{
+        for(int i=0; i<nb_white_pieces; i++) {
+          if(white_pieces[i].line == _m.line_f && white_pieces[i].col == _m.col_f){
+            white_pieces[i] = white_pieces[nb_white_pieces-1];
+            nb_white_pieces--;
+            break;
+          }
+        }  
+      }
+
+  }
+
+  board[_m.line_f][_m.col_f] = color_i;
+  board[_m.line_i][_m.col_i] = EMPTY;
+
+  if (color_i == BLACK) {
+    for(int i = 0; i < nb_black_pieces; i++) {
+      if(black_pieces[i].line == _m.line_i &&
+         black_pieces[i].col == _m.col_i) {
+        black_pieces[i].line = _m.line_f;
+        black_pieces[i].col = _m.col_f;
+        break;
+      }
+    }
+    if(color_f == WHITE) {
+      for(int i = 0; i < nb_white_pieces; i++) {
+        if(white_pieces[i].line == _m.line_f &&
+           white_pieces[i].col == _m.col_f) {
+          white_pieces[i] = white_pieces[nb_white_pieces-1];
+          nb_white_pieces--;
+          break;
+        }
+      }
+    }
+  turn++;
+
+}
+}
+
+
 
 
 */
