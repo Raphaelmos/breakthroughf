@@ -8,6 +8,18 @@
 #define EMPTY 2
 char* cboard = (char*)"o@.";
 
+/*
+// Add boolean flag to track forcing eating
+bool force_eating = false; 
+void bt_t::setForceEating(bool enforce);
+void bt_t::setForceEating(bool enforce) {
+  force_eating = enforce;
+}
+
+
+*/
+
+
 // print black in red (as bg is black... black is printed in red)
 // comment the following #define USE_COLOR to print without color
 #define USE_COLOR
