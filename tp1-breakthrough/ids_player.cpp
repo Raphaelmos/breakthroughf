@@ -60,7 +60,71 @@ void genmove() {
   bt_move_t best_move;
 double max = -INFINITY;
 int maxDepth = 6;
+  // Transposition table
+TranspositionTable TT;
+bt_move_t best_move;
+// Alpha-beta search function
+int AlphaBeta(bt_t& board, int alpha, int beta, int depth) {
 
+  // Base case
+  if(depth == 0 || board.isGameOver()) 
+    return board.evaluate();
+
+  // TT lookup  
+  Entry* e = TT.lookup(board.hash());
+
+  if(e->depth >= depth)
+    return e->score;
+
+  int score = -INFINITY;
+
+  // Generate all moves
+  std::vector<Move> moves = board.generateMoves();
+
+  // Search moves
+  foreach(Move m : moves) {
+
+    board.makeMove(m);
+
+    int score = -AlphaBeta(board, -beta, -alpha, depth-1);
+
+    board.takeBack(m);
+
+    if(score > alpha) {
+      alpha = score;
+      if(score >= beta) {
+        TT.store(board.hash(), score, depth);
+        return score; 
+      }
+    }
+  }
+
+  TT.store(board.hash(), alpha, depth);
+  return alpha;
+
+}
+
+// IDs function 
+Move IDS(bt_t board) {
+
+  int maxDepth = 6;
+
+  for(int depth=1; depth<=maxDepth; depth++) {
+
+    int score = AlphaBeta(board, -INFINITY, INFINITY, depth);
+
+    if(score > bestScore) {
+      bestScore = score;
+      best_move = board.lastMove(); 
+    }
+
+  }
+
+  return best_move;
+
+}
+  
+/*
 for (int depth = 1; depth <= maxDepth; depth++) {
   bt_t current_B = B;
   current_B.update_moves();
@@ -83,7 +147,7 @@ for (int depth = 1; depth <= maxDepth; depth++) {
     best_move = current_best_move;
   }
 }
-
+*/
 B.play(best_move);
  
  if(verbose) {
