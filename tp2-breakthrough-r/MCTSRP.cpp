@@ -23,7 +23,7 @@ bool verbose = false;
 bool showboard_at_each_move = false;
 #endif
 
-char playername[128];
+char playername[128] = "MCTSTOPWin";
 
 // Déclaration des fonctions
 bt_move_t mcts(double time_limit);
