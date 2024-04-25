@@ -148,7 +148,7 @@ void genmove() {
         printf("= \n\n");
         return;
     }
-    bt_move_t m = B.mcts(0.95);
+    bt_move_t m = B.mcts(0.095);
     printf("= %s\n\n", m.tostr(B.nbl).c_str());
 }
 
