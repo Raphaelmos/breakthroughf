@@ -7,6 +7,6 @@ This project is about making a AI for the Breakthrough game, part of the univers
 2. Implement the force eat condition
 3. Have a proper IDS Algorithm
 
-# Objectives
+# Objectives~2
 
 1. Functional MCTS better than a heuristic / IDS
